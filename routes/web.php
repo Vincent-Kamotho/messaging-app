@@ -18,6 +18,12 @@ Route::get('/', [App\Http\Controllers\ListUsersController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contacts', [App\Http\Controllers\ContactsController::class,'index'])->name('contact');
+Route::get('/create-contact', [App\Http\Controllers\ContactsController::class, 'create']);
+Route::post('/save-contact', [App\Http\Controllers\ContactsController::class, 'store']);
+Route::get('edit-contact/{id}', [App\Http\Controllers\ContactsController::class, 'edit']);
+Route::post('update-contact/{id}', [App\Http\Controllers\ContactsController::class, 'update']);
+Route::get('delete-contact/{id}', [App\Http\Controllers\ContactsController::class, 'delete']);
 
 
 Route::post('/send-sms', [App\Http\Controllers\TwilioController::class, 'sendText']);

@@ -21,4 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::put('user/{id}/update', [App\Http\Controllers\ListUsersController::class, 'update']);
 Route::get('user/{id}/delete', [App\Http\Controllers\ListUsersController::class, 'delete']);
 
+Route::get('products', [App\Http\Controllers\ContactsController::class, 'indexApi']);
+Route::put('product/{id}/update', [App\Http\Controllers\ContactsController::class, 'update']);
+
 Route::resource('users', 'ListUsersController');
