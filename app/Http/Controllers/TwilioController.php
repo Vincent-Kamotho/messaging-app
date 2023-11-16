@@ -9,17 +9,18 @@ class TwilioController extends Controller
 {
     public function sendSMS(Request $request)
     {
-        $sid               = env('TWILIO_SID');
-        $token             = env('TWILIO_AUTH_TOKEN');
-        $twilioPhoneNumber = env('TWILIO_PHONE_NUMBER');
+        $sid = getenv('TWILIO_SID');
+        $token = getenv('TWILIO_AUTH_TOKEN');
+        $twilioPhoneNumber = getenv('TWILIO_PHONE_NUMBER');
 
         $client = new Client($sid, $token);
 
-        $message = $client->messages->create(
-            $request->input('to'),
+        $message = $client->messages
+                          ->create("+254 708 683439",
+            
             [
+                'body' => "This is the message I am Sending you",
                 'from' => $twilioPhoneNumber,
-                'body' => $request->input('message'),
             ]
         );
 

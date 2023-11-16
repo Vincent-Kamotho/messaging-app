@@ -26,5 +26,5 @@ Route::post('update-contact/{id}', [App\Http\Controllers\ContactsController::cla
 Route::get('delete-contact/{id}', [App\Http\Controllers\ContactsController::class, 'delete']);
 
 
-Route::post('/send-sms', [App\Http\Controllers\TwilioController::class, 'sendText']);
+Route::get('/send-sms', [App\Http\Controllers\TwilioController::class, 'sendSMS']);
 

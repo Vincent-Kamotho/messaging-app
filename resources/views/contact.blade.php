@@ -35,6 +35,7 @@
                             <th scope="col">Contact</th>
                             <th scope="col">Location</th>
                             <th scope="col">Action</th>
+                            <th scope="col">Communication</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +48,10 @@
                                 <td>
                                     <a href="{{url('/edit-contact/'. $contact->id)}}" class="btn btn-success">Edit</a>
                                     <a href="{{url('/delete-contact/'. $contact->id)}}" class="btn btn-danger">Delete</a>
+                                </td>
+                                <td>
+                                    <a href="" class="btn btn-primary">Send Email</a>
+                                    <a href="{{url('send-sms')}}" class="btn btn-warning">Send SMS</a>
                                 </td>
                             </tr>
                         @endforeach
